@@ -1,0 +1,37 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Antecessor / Sucessor </h2>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-lg-4 large">
+        <label for="input-num" class="control-label">Informe um número</label>
+      </div>
+      <div class="col-lg-4 large">
+        <input type="text" class="form-control" id="input-num" [(ngModel)]="numero">
+      </div>
+      <div class="col-lg-4 large">
+        <button type="button" class="btn btn-md btn-primary" (click)="getAntecSucec()">Verificar</button>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="result">
+      <div class="col-lg-4 large">
+        <p>Antecessor</p>
+        <h2>{{ result?.antecessor }}</h2>
+      </div>
+      <div class="col-lg-4 large">
+        <p>Número</p>
+        <h2>{{ result?.numero }}</h2>
+      </div>
+      <div class="col-lg-4 large">
+        <p>Sucessor</p>
+        <h2>{{ result?.sucessor }}</h2>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="err.length > 0">
+      <div style="background-color: red">{{ err }}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Operações</h2>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-lg-2 large">
+        <label for="input-num" class="control-label">Primeiro Número</label>
+      </div>
+      <div class="col-lg-2 large">
+        <input type="text" inputmode="numeric"class="form-control" id="input-num" [(ngModel)]="num1">
+      </div>
+      <div class="col-lg-2 large">
+        <label for="input-num" class="control-label">Segundo Número</label>
+      </div>
+      <div class="col-lg-2 large">
+        <input type="text" class="form-control" id="input-num" inputmode="numeric" [(ngModel)]="num2">
+      </div>
+
+      <div class="col-lg-1 large">
+        <button type="button" class="btn btn-md btn-primary" (click)="getSoma()">+</button>
+      </div>
+      <div class="col-lg-1 large">
+        <button type="button" class="btn btn-md btn-primary" (click)="getSubtracao()">-</button>
+      </div>
+      <div class="col-lg-1 large">
+        <button type="button" class="btn btn-md btn-primary" (click)="getMultiplicacao()">*</button>
+      </div>
+      <div class="col-lg-1 large">
+        <button type="button" class="btn btn-md btn-primary" (click)="getDivisao()">/</button>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="result">
+      <div class="col-lg-3 large">
+        <p>Resultado</p>
+      </div>
+      <div class="col-lg-3 large">
+        <h2>{{ result.resultado }}</h2>
+      </div>
+      <div class="col-lg-6 large">
+        <p>{{ result.mensagem }}</p>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="err.length > 0">
+      <span style="background-color: red">{{ err }}</span>
+    </div>
+  </div>
+</div>
